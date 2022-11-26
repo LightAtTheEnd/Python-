@@ -1,0 +1,69 @@
+def welcome():
+    print('''
+The below 100 Calculator, 
+ONLY INPUT INTEGERS BELOW 100
+''')
+...
+# Start the call function
+welcome()
+
+# Define what calculations the calculator will offer
+
+def calculate():
+    operation = input('''
+Please type in the math operation you would like to complete:
++ for addition
+- for subtraction
+* for multiplication
+/ for division
+''')
+
+# This calculator will only ask for two integers
+    number_1 = int(input('Please enter the first number: '))
+    number_2 = int(input('Please enter the second number: '))
+  
+# We start with an if statement to define our paramaters of only accepting integers less than 100
+  
+    if number_1 > 100 or number_2 > 100:
+        print("Calculator accepts values less than 100 only")
+      
+# elif is used hereafter to define other operations we wish to offer in the calculator
+      
+    elif operation == '+':
+        print('{} + {} = '.format(number_1, number_2))
+        print(number_1 + number_2)
+
+    elif operation == '-':
+        print('{} - {} = '.format(number_1, number_2))
+        print(number_1 - number_2)
+
+    elif operation == '*':
+        print('{} * {} = '.format(number_1, number_2))
+        print(number_1 * number_2)
+
+    elif operation == '/':
+        print('{} / {} = '.format(number_1, number_2))
+        print(number_1 / number_2)
+
+    else:
+        print('You have not typed a valid integer, please run the program again.')
+
+    # Add again() function to calculate() function
+    again()
+
+# start again function 
+def again():
+    calc_again = input('''
+Do you want to calculate again?
+Please type Y for YES or N for NO.
+''')
+
+    if calc_again.upper() == 'Y':
+        calculate()
+    elif calc_again.upper() == 'N':
+        print('See you later.')
+    else:
+        again()
+
+calculate()
+
